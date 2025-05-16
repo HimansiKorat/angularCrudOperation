@@ -1,0 +1,70 @@
+<!-- <div class="container mt-4">
+  <h2 class="mb-4">Add Employee</h2>
+
+  <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+    <div class="mb-3">
+      <label>Name</label>
+      <input type="text" class="form-control" required [(ngModel)]="employee.name" name="name" />
+    </div>
+
+    <div class="mb-3">
+      <label>Age</label>
+      <input type="number" class="form-control" required [(ngModel)]="employee.age" name="age" />
+    </div>
+
+    <div class="mb-3">
+      <label>Department</label>
+      <input type="text" class="form-control" required [(ngModel)]="employee.department" name="department" />
+    </div>
+
+    <div class="mb-3">
+      <label>Salary</label>
+      <input type="number" class="form-control" required [(ngModel)]="employee.salary" name="salary" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a routerLink="/" class="btn btn-secondary ms-2">Cancel</a>
+  </form>
+</div> -->
+
+
+<div class="container mt-4">
+  <h2 class="mb-4">Add Employee</h2>
+
+  <form nz-form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="name" nzRequired>Name</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzErrorTip="Please input name!">
+        <input nz-input id="name" required [(ngModel)]="employee.name" name="name" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="age" nzRequired>Age</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzErrorTip="Please input age!">
+        <input nz-input type="number" id="age" required [(ngModel)]="employee.age" name="age" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="department" nzRequired>Department</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzErrorTip="Please input department!">
+        <input nz-input id="department" required [(ngModel)]="employee.department" name="department" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="salary" nzRequired>Salary</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzErrorTip="Please input salary!">
+        <input nz-input type="number" id="salary" required [(ngModel)]="employee.salary" name="salary" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary" type="submit">Submit</button>
+        <a routerLink="/" nz-button nzType="default" class="ms-2">Cancel</a>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>

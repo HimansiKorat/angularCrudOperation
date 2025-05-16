@@ -1,0 +1,41 @@
+<div class="container mt-4">
+<h2 class="mb-4 d-flex justify-content-between align-items-center">
+    Employee List
+    <button class="btn btn-primary" [routerLink]="['/employee-form']">
+    + Add Employee
+    </button>
+</h2>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Action</th> <!-- Action Column -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employeeList">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.age }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.salary | currency }}</td>
+        <td>
+        <!-- Update button -->
+        <button class="btn btn-sm btn-warning me-2" (click)="edit(employee.id)" >
+            Update
+        </button>
+
+        <!-- Delete button -->
+        <button class="btn btn-sm btn-danger" (click)="delete(employee.id)">
+            Delete
+        </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
